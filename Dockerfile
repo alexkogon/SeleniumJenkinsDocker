@@ -11,4 +11,5 @@ RUN apt-get -y install git \
 #                   ant
 RUN apt-get clean all
 RUN wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-RUN unzip chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip -d /usr/local/bin
+RUN rm chromedriver_linux64.zip
