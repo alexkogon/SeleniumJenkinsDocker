@@ -6,10 +6,9 @@ RUN apt-get clean all
 RUN apt-get -y install git \
                    wget \
                    unzip \
-                   java-1.8.0-openjdk* \
-                   ant
+                   openjdk-8-jdk 
+#                   openjdk-8-jdk \
+#                   ant
 RUN apt-get clean all
-
-USER jenkins
 RUN wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
 RUN unzip chromedriver_linux64.zip

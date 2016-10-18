@@ -8,7 +8,7 @@ VERSION=latest
 
 
 docker:
-	docker build --no-cache=true  -t $(AUTHOR)/$(NAME):$(VERSION) .
+	docker build --no-cache=false  -t $(AUTHOR)/$(NAME):$(VERSION) .
 
 bash:
 	docker run --privileged=true -ti -e DISPLAY=unix${DISPLAY} -P $(AUTHOR)/$(NAME):$(VERSION) /bin/bash
