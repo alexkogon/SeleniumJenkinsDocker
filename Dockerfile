@@ -1,4 +1,4 @@
-FROM internavenue/centos-jenkins:latest
+FROM pantinor/centos-jenkins:latest
 MAINTAINER alex@kogon.com
 
 #USER root
