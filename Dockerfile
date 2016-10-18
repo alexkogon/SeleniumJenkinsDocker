@@ -13,3 +13,10 @@ RUN apt-get clean all
 RUN wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
 RUN unzip chromedriver_linux64.zip -d /usr/local/bin
 RUN rm chromedriver_linux64.zip
+RUN wget https://pypi.python.org/packages/source/s/setuptools/setuptools-7.0.tar.gz --no-check-certificate
+RUN tar xzf setuptools-7.0.tar.gz
+RUN python setuptools-7.0/setup.py install
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN pip install sphinx
+
