@@ -11,9 +11,9 @@ docker:
 	docker build --no-cache=false  -t $(AUTHOR)/$(NAME):$(VERSION) .
 
 bash:
-	docker run --privileged=true -ti -e DISPLAY=unix${DISPLAY} -P $(AUTHOR)/$(NAME):$(VERSION) /bin/bash
+	docker run -ti -P $(AUTHOR)/$(NAME):$(VERSION) /bin/bash
 
 magic:
-	docker run --privileged=true -ti -e DISPLAY=unix${DISPLAY} -P $(AUTHOR)/$(NAME):$(VERSION)
+	docker run -ti -p 8080:8080 -p 50000:50000 -v /vol/jenkins:/var/jenkins_home -u jenkins -P $(AUTHOR)/$(NAME):$(VERSION)
 
 default: magic
